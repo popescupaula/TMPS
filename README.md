@@ -10,4 +10,13 @@ Academic Group: FAF-191
 4. [Implementation:](#implementation)
 5. [Results:](#results)
 
-## Objectives
+## Objectives:
+1. Study and understand the Creational Design Patterns.
+2. Choose a domain, define its main classes/models/entities and choose the appropriate instantiation mechanisms.
+3. Use some creational design patterns for object instantiation in a sample project.
+
+## Task:
+1. Choose an OO programming language and a suitable IDE or Editor (No frameworks/libs/engines allowed).
+2. Select a domain area for the sample project.
+3. Define the main involved classes and think about what instantiation mechanisms are needed.
+4. Based on the previous point, implement atleast 3 creational design patterns in your project.
