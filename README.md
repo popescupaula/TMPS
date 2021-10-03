@@ -78,6 +78,7 @@ public class GenreFactory implements AbstractFactory {
     }
 }
 ```
+
 * Language Factory
 ```
 public class LanguageFactory implements AbstractFactory {
@@ -113,3 +114,87 @@ public class LanguageFactory implements AbstractFactory {
     }
 }
 ```
+* Singleton
+```
+public class GenreFactory implements AbstractFactory {
+    private static GenreFactory genreFactory;
+    private final Writer writer = new Writer();
+
+    public static GenreFactory getGenreFactory(){
+        if (genreFactory == null)
+            genreFactory = new GenreFactory();
+        return genreFactory;
+    }
+
+    private GenreFactory(){}
+```
+
+* Builder
+```
+public interface BookBuilder {
+    void create();
+    void setName(String name);
+    void setAuthor(String author);
+    void setPage(int page);
+    void setPrice(double price);
+}
+```
+
+## Results
+Here is ilustrated the results for differet type of inputs:
+* genres
+```
+We're glad you came to our bookstore!
+From which category would you like to buy books: genre or language? 
+If you want to exit press X 
+genre
+
+The 'Me before you' write by Jojo Moyes
+The first book ever written using a typewriter was The Adventures of Tom Sawyer.
+Number of pages: 528p
+Price: 255.2 MDL
+
+The 'Hamlet' write by William Shakespeare
+There are over 129 million books in existence.
+Number of pages: 192p
+Price: 80.99 MDL
+
+The 'Hype' write by Hose Pablo
+Icelandic people read more than anyone.
+Number of pages: 88p
+Price: 100.1 MDL
+
+```
+
+* language
+```
+We're glad you came to our bookstore!
+From which category would you like to buy books: genre or language? 
+If you want to exit press X 
+language
+
+The 'Madame Bovary' write by Gustave Flaubert
+President Theodore Roosevelt read one book per day.
+Number of pages: 367p
+Price: 124.87 MDL
+
+The 'Trimalchio: An Early Version of The Great Gatsby' write by F. Scott Fitzgerald
+The most expensive book ever purchased was sold for $30.8 million.
+Number of pages: 160p
+Price: 137.64 MDL
+
+The 'Mara' write by Ioan Slavici
+The three most read books in the world are: The Holy Bible, Quotations from Chairman Mao Tse-Tung, and Harry Potter.
+Number of pages: 280p
+Price: 90.09 MDL
+```
+
+* Wrong Input
+```
+We're glad you came to our bookstore!
+From which category would you like to buy books: genre or language? 
+If you want to exit press X 
+book
+Oh no, we don't have this type of books in our store!
+```
+
