@@ -31,3 +31,12 @@ Some examples of this kind of design patterns are:
 * Object Pooling
 * Factory Method
 * Abstract Factory
+
+## Implementation:
+In this laboratory work, I simulate a bookstore, where the products are devided into two categories : by genres and by language. Therefore, each category has a factory method implemented GenreFactory and LanguageFactory, which are used to generate objects of concrete classes. The Genre Factory and Language Factory implement the interface Abstract Factory which has the method sellBook(). Each factory has three subclasses with their separate implemented builders. This was done in order to enable the user to create different representations from the same construction process. In each two concrete factories, there is a static creation method that acts like a constructor. This method calls the private constructor to create an object and saves it in a static field. All following calls to this method return the cached object.   
+* Abstract Factory
+```
+public interface AbstractFactory {
+    Book sellBook(String name);
+}
+```
