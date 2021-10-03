@@ -1,6 +1,6 @@
 # Creational Design Patterns
 
-Author: Popescu Paula 
+Author: Popescu Paula   
 Academic Group: FAF-191
 
 ## Table of Contents:
