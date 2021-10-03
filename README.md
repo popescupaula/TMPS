@@ -33,10 +33,83 @@ Some examples of this kind of design patterns are:
 * Abstract Factory
 
 ## Implementation:
-In this laboratory work, I simulate a bookstore, where the products are devided into two categories : by genres and by language. Therefore, each category has a factory method implemented GenreFactory and LanguageFactory, which are used to generate objects of concrete classes. The Genre Factory and Language Factory implement the interface Abstract Factory which has the method sellBook(). Each factory has three subclasses with their separate implemented builders. This was done in order to enable the user to create different representations from the same construction process. In each two concrete factories, there is a static creation method that acts like a constructor. This method calls the private constructor to create an object and saves it in a static field. All following calls to this method return the cached object.   
+In this laboratory work, I simulate a bookstore, where the products are devided into two categories : by genres and by language. Therefore, each category has a factory method implemented GenreFactory and LanguageFactory, which are used to generate objects of concrete classes. The Genre Factory and Language Factory implement the interface Abstract Factory which has the method sellBook(). 
 * Abstract Factory
 ```
 public interface AbstractFactory {
     Book sellBook(String name);
+}
+```
+Each factory has three subclasses with their separate implemented builders. This was done in order to enable the user to create different representations from the same construction process. In each two concrete factories, there is a static creation method that acts like a constructor. This method calls the private constructor to create an object and saves it in a static field. All following calls to this method return the cached object.   
+* Genre Factory
+```
+public class GenreFactory implements AbstractFactory {
+    private static GenreFactory genreFactory;
+    private final Writer writer = new Writer();
+
+    public static GenreFactory getGenreFactory(){
+        if (genreFactory == null)
+            genreFactory = new GenreFactory();
+        return genreFactory;
+    }
+
+    private GenreFactory(){}
+
+    public Book sellBook(String name) {
+        if (name == null) {
+            return null;
+        }
+        if (name.toLowerCase() == "fantasy") {
+            FantasyBuilder fantasyBuilder = new FantasyBuilder();
+            writer.sellFantasy(fantasyBuilder);
+            return fantasyBuilder.getBook();
+
+        } else if (name.toLowerCase() == "drama") {
+            DramaBuilder dramaBuilder = new DramaBuilder();
+            writer.sellDrama(dramaBuilder);
+            return dramaBuilder.getBook();
+
+        } else if (name.toLowerCase() == "poetry") {
+            PoetryBuilder poetryBuilder = new PoetryBuilder();
+            writer.sellPoetry(poetryBuilder);
+            return poetryBuilder.getBook();
+        }
+        return null;
+    }
+}
+```
+* Language Factory
+```
+public class LanguageFactory implements AbstractFactory {
+    private static LanguageFactory languageFactory;
+    private final Writer writer = new Writer();
+
+    public static LanguageFactory getLanguageFactory(){
+        if (languageFactory == null)
+            languageFactory = new LanguageFactory();
+        return languageFactory;
+    }
+
+    private LanguageFactory(){}
+
+    public Book sellBook(String name) {
+        if (name == null) {
+            return null;
+        }
+        if (name.toLowerCase() == "french") {
+            FrenchBuilder frenchBuilder = new FrenchBuilder();
+            writer.sellFrench(frenchBuilder);
+            return frenchBuilder.getBook();
+        } else if (name.toLowerCase() == "english") {
+            EnglishBuilder englishBuilder = new EnglishBuilder();
+            writer.sellEnglish(englishBuilder);
+            return englishBuilder.getBook();
+        } else if (name.toLowerCase() == "romanian") {
+            RomanianBuilder romanianBuilder = new RomanianBuilder();
+            writer.sellRomanian(romanianBuilder);
+            return romanianBuilder.getBook();
+        }
+        return null;
+    }
 }
 ```
