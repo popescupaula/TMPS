@@ -1,7 +1,7 @@
 # Creational Design Patterns
 
-## Author: Popescu Paula
-## Academic Group: FAF-191
+Author: Popescu Paula 
+Academic Group: FAF-191
 
 ## Table of Contents:
 1. [Objectives:](#objectives) 
