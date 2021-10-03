@@ -10,5 +10,4 @@ Academic Group: FAF-191
 4. [Implementation:](#implementation)
 5. [Results:](#results)
 
-<a name="objectives"/>
 ## Objectives
