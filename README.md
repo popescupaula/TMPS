@@ -4,8 +4,8 @@ Author: Popescu Paula
 Academic Group: FAF-191
 
 ## Table of Contents:
-1. [Laboratory 1:](#laboratory1)
-2. [Laboratory 2:](#laboratory2)
+1. [Laboratory 1](#laboratory1)
+2. [Laboratory 2](#laboratory2)
 
 #  Laboratory 1:
 ## Table of Contents:
