@@ -3,6 +3,10 @@
 Author: Popescu Paula   
 Academic Group: FAF-191
 
+## Table of Contents:
+1. [Laboratory 1:](#laboratory1)
+2. [Laboratory 2:](#laboratory2)
+
 #  Laboratory 1:
 ## Table of Contents:
 1. [Objectives:](#objectives) 
@@ -199,3 +203,4 @@ book
 Oh no, we don't have this type of books in our store!
 ```
 
+#  Laboratory 2:
