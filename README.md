@@ -4,6 +4,7 @@ Academic Group: FAF-191
 ## Table of Contents:
 1. [Laboratory 1 - Creational Design Patterns](#laboratory1)
 2. [Laboratory 2 - Structural Design Patterns](#laboratory2)
+3. [Laboratory 3 - Behavioral Design Patterns](#laboratory3)
 
 #  Laboratory 1 - Creational Design Patterns
 ## Table of Contents:
@@ -420,4 +421,137 @@ Price: 25.0 MDL
 
 Bookmark: Paper Tag
 Price: 15.0 MDL
+```
+
+#  Laboratory 3 - Behavioral Design Patterns
+## Table of Contents:
+1. [Objectives:](#objectives) 
+2. [Task:](#task)
+3. [Theory:](#theory)
+4. [Implementation:](#implementation)
+5. [Results:](#results)
+
+## Objectives:
+1. Study and understand the Behavioral Design Patterns.
+2. As a continuation of the previous laboratory work, think about what communication between software entities might be involed in your system.
+3. Implement some additional functionalities using behavioral design patterns.
+
+## Task:
+1. By extending your project, implement at least 1 behavioral design pattern in your project:
+2. Keep your files grouped (into packages/directories) by their responsibilities (an example project structure)
+3. Document your work in a separate markdown file according to the requirements presented below (the structure can be extended of course)
+
+##Theory:
+In software engineering, behavioral design patterns have the purpose of identifying common communication patterns between different software entities. By doing so, these patterns increase flexibility in carrying out this communication.
+
+Some examples from this category of design patterns are :
+
+* Chain of Responsibility
+* Command
+* Interpreter
+* Iterator
+* Mediator
+* Observer
+* Strategy
+
+## Implementaion:
+From all presented Behavioral design patterns I choosed to implement the Strategy. It enables selecting an algorithm at runtime. Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use. I implemented it in my laboratory as a Card for Sale and a Coupon.
+
+I have created a interface named Strategy:
+```
+public interface Strategy {
+    double doSale (double price);
+}
+```
+
+For this interface I created concrete classes:
+StudentCard: 
+```
+public class StudentCard implements Strategy {
+    @Override
+    public double doSale(double price){
+        return price *0.85;
+    }
+}
+```
+
+Coupon:
+```
+public class Coupon implements Strategy {
+    @Override
+    public double doSale(double price){
+        return price * 0.7;
+    }
+}
+```
+
+## Results:
+Here is ilustrated the results for differet type of inputs:
+* Student Card
+```
+---Welcome to our BookStore!---
+What type of book would you like to buy?
+*language 
+*genre  
+*bookmark 
+If you want to exit press X 
+language
+Do you have a Student Card? y/n
+y
+Do you want custom packaging? y/n
+n
+
+The 'Madame Bovary' write by Gustave Flaubert
+ President Theodore Roosevelt read one book per day. 
+Number of pages: 367p
+Price: 124.87 MDL
+
+The 'Trimalchio: An Early Version of The Great Gatsby' write by F. Scott Fitzgerald
+The most expensive book ever purchased was sold for $30.8 million.
+Number of pages: 160p
+Price: 137.64 MDL
+
+The 'Mara' write by Ioan Slavici
+ The three most read books in the world are: The Holy Bible, Quotations from Chairman Mao Tse-Tung, and Harry Potter.
+Number of pages: 280p
+Price: 90.09 MDL
+Prices with your 15% discount card
+French:106.1395
+English:116.99399999999999
+Romanian:76.5765
+```
+* Coupon
+```
+---Welcome to our BookStore!---
+What type of book would you like to buy?
+*language 
+*genre  
+*bookmark 
+If you want to exit press X 
+genre
+Do you have a Student Card? y/n
+n
+Do you want custom packaging? y/n
+n
+
+The 'Me before you' write by Jojo Moyes
+ The first book ever written using a typewriter was The Adventures of Tom Sawyer.
+Number of pages: 528p
+Price: 255.2 MDL
+
+The 'Hamlet' write by William Shakespeare
+There are over 129 million books in existence.
+Number of pages: 192p
+Price: 80.99 MDL
+
+The 'Hype' write by Hose Pablo
+ Icelandic people read more than anyone. 
+Number of pages: 88p
+Price: 100.1 MDL
+Maybe you have a coupon?
+y
+Prices for your coupon
+Fantasy:178.64
+Drama:56.69299999999999
+Poetry:70.07
 ```
