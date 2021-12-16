@@ -441,7 +441,7 @@ Price: 15.0 MDL
 2. Keep your files grouped (into packages/directories) by their responsibilities (an example project structure)
 3. Document your work in a separate markdown file according to the requirements presented below (the structure can be extended of course)
 
-##Theory:
+## Theory:
 In software engineering, behavioral design patterns have the purpose of identifying common communication patterns between different software entities. By doing so, these patterns increase flexibility in carrying out this communication.
 
 Some examples from this category of design patterns are :
